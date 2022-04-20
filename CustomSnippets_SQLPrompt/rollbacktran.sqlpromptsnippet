@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>rollbacktran</Title>
+      <Shortcut>rollbacktran</Shortcut>
+      <Description />
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[SET NOCOUNT ON
+SET XACT_ABORT ON
+SET ARITHABORT ON
+GO
+
+BEGIN TRAN
+
+$CURSOR$
+
+ROLLBACK TRAN
+GO]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

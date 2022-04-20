@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>perftest</Title>
+      <Shortcut>perftest</Shortcut>
+      <Description>Base code for testing performance</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="sql"><![CDATA[SET NOCOUNT ON
+GO
+
+DECLARE @dbId INT = DB_ID();
+DBCC FLUSHPROCINDB(@dbId);
+
+--DBCC DROPCLEANBUFFERS;
+GO
+
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

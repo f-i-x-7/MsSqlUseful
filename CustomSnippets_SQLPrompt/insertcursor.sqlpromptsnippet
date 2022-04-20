@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets>
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>insertcursor</Title>
+      <Shortcut>insertcursor</Shortcut>
+      <Description>Insert cursor</Description>
+      <Author />
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>cur</ID>
+          <ToolTip />
+          <Default>cur</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="sql"><![CDATA[DECLARE $cur$ CURSOR LOCAL FAST_FORWARD FOR
+SELECT 1
+FROM @table
+
+OPEN $cur$
+
+WHILE 1=1
+BEGIN
+	FETCH NEXT FROM $cur$ INTO @var
+	
+	IF @@FETCH_STATUS <> 0 BREAK
+END
+
+CLOSE $cur$
+DEALLOCATE $cur$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
